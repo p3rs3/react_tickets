@@ -1,28 +1,28 @@
 import React, { FC, useState } from 'react';
 import { Form, Input, Button, Alert } from 'antd';
-import { useDispatch } from 'react-redux';
-import { AuthActionCreators } from '../store/reducers/auth/action-creators';
 import { useTypedSelector } from '../hooks/useTypedSelector';
+import { useActions } from '../hooks/useActions';
+
 
 export const LoginForm: FC = () => {
-    const dispatch = useDispatch();
+    const {login} = useActions();
     const {error, isAuth, user} = useTypedSelector(state => state.authReducer);
-    const [username, setUserName] = useState('');;
+    const [username, setUserName] = useState('');
+    const [password, setPassword] = useState('');
 
-    const [password, setPassword] = useState('')
-    const submit = (e) => {
-        dispatch(AuthActionCreators.login(username, password));
+    const submit = () => {
+        login(username, password);
     }
 
     const submitFailed = () => {
         console.log('submit failed');
     }
 
-    const loginChange = (e) => {
+    const loginChange = (e:{target:{value: string}}) => {
         setUserName(e.target.value);
     }
 
-    const passwordChange = (e) => {
+    const passwordChange = (e:{target:{value: string}}) => {
         setPassword(e.target.value);
     }
 
@@ -62,6 +62,7 @@ export const LoginForm: FC = () => {
                     <Alert
                         message="Неверные данные пользователя"
                         type="error"
+                        showIcon
                         className ="marginTop10"
                     />
             }

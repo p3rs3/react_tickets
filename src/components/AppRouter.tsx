@@ -11,7 +11,7 @@ export const AppRouter = () => {
         isAuth
             ?
             <Switch>
-                {privateRoutes.map(route =>  
+                {privateRoutes.map(route =>
                     <Route 
                         path={route.path}
                         exact={route.exact}

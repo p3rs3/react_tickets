@@ -46,14 +46,17 @@ export const AuthActionCreators = {
 
             dispatch(AuthActionCreators.setError('Пользователь не найден'));
         } catch(e) {
-            
+            throw e;
         }
     },
     logout: () => async (dispatch: AppDispatch) => {
         try {
-            
+            localStorage.setItem('auth', 'false');
+            localStorage.setItem('username', '');
+            dispatch(AuthActionCreators.setIsAuth(false));
+            dispatch(AuthActionCreators.setUser({} as User));
         } catch(e) {
-            
+            throw e;
         }
     }
 }

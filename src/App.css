@@ -5,3 +5,14 @@
 .marginTop10 {
     margin-top: 10px;
 }
+
+.nav-button {
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.nav-button:hover {
+    background-color: #1890ff;
+    transition: .3s;
+}

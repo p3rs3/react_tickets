@@ -1,0 +1,36 @@
+[
+    {
+        "id": "20",
+        "domain": "google.com",
+        "client": "1",
+        "createdAt": "19.09.2021 17:15",
+        "updatedAt": "19.09.2021 17:16"
+    },
+    {
+        "id": "30",
+        "domain": "yandex.ru",
+        "client": "1",
+        "createdAt": "19.09.2021 17:15",
+        "updatedAt": "19.09.2021 17:16"
+    },
+    {
+        "id": "40",
+        "domain": "vk.com",
+        "client": "2",
+        "createdAt": "19.09.2021 17:15",
+        "updatedAt": "19.09.2021 17:16"
+    },
+    {
+        "id": "50",
+        "domain": "mail.ru",
+        "client": "3",
+        "createdAt": "19.09.2021 17:15",
+        "updatedAt": "19.09.2021 17:16"
+    },{
+        "id": "60",
+        "domain": "ok.ru",
+        "client": "3",
+        "createdAt": "19.09.2021 17:15",
+        "updatedAt": "19.09.2021 17:16"
+    }
+]
