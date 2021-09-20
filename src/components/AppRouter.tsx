@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { privateRoutes, publicRoutes, RouteNames } from '../router';
+import { privateRoutes, publicRoutes } from '../router';
 
 
 export const AppRouter = () => {
@@ -19,19 +19,20 @@ export const AppRouter = () => {
                         key={route.path}
                     />
                 )}
-                <Redirect to={RouteNames.CLIENTS}></Redirect>
+                <Redirect to='/clients'></Redirect>
             </Switch>
             :
             <Switch>
-                {publicRoutes.map(route =>  
-                    <Route 
-                        path={route.path}
-                        exact={route.exact}
-                        component={route.component}
-                        key={route.path}
-                    />
-                )}
-                <Redirect to={RouteNames.LOGIN}></Redirect>
+                {publicRoutes.map(route => 
+                        <Route 
+                            path={route.path}
+                            exact={route.exact}
+                            component={route.component}
+                            key={route.path}
+                        />
+                    )
+                })
+                <Redirect to='/login'></Redirect>
             </Switch>
     )
 }

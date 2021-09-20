@@ -7,19 +7,31 @@ import './App.css';
 import { useActions } from './hooks/useActions';
 import { User } from './models/User'
 import { useTypedSelector } from './hooks/useTypedSelector';
+import { useComponentWillMount } from './hooks/useComponentWillMount';
 
 function App() {
     const {setIsAuth, setUser} = useActions();
     const {isAuth} = useTypedSelector(state => state.authReducer)
 
-    useEffect(() => {
+    useComponentWillMount(() => {
         if (localStorage.getItem('auth') === 'true') {
+            console.log('set is auth')
             const user = localStorage.getItem('user');
 
             setIsAuth(true);
             setUser({username: user} as User);
         }
-    }, []);
+    });
+
+    // useEffect(() => {
+    //     if (localStorage.getItem('auth') === 'true') {
+    //         console.log('set is auth')
+    //         const user = localStorage.getItem('user');
+
+    //         setIsAuth(true);
+    //         setUser({username: user} as User);
+    //     }
+    // }, []);
 
     return (
         <Layout>

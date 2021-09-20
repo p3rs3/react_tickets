@@ -1,7 +1,8 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Form, Input, Button, Alert } from 'antd';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useActions } from '../hooks/useActions';
+import { useHistory } from 'react-router';
 
 
 export const LoginForm: FC = () => {
